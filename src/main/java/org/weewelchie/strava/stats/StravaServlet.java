@@ -38,6 +38,9 @@ public class StravaServlet extends HttpServlet {
 	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		PrintWriter out = resp.getWriter();
+		resp.setContentType("application/json");
+		resp.setCharacterEncoding("UTF-8");
+		
 		if (authorize) {
 			try {
 				// Create the End User Authorization Request by
@@ -102,10 +105,10 @@ public class StravaServlet extends HttpServlet {
 				String resType=resourceResponse.getContentType();
 				
 				
-				out.println("Activity Details");
-				out.flush();
+				//out.println("Activity Details");
+				//out.flush();
 	
-				out.println("<html><head>Heading</head><body><table style='width:100%'>");
+				//out.println("<html><head>Heading</head><body><table style='width:100%'>");
 				
 				JSONArray array = new JSONArray(responseBody);
 				JSONArray outputArray = new JSONArray();
@@ -143,11 +146,11 @@ public class StravaServlet extends HttpServlet {
 				  
 				  String type = jsonObj.getString("type");
 				  obj.append("type", type);
-				  out.println("<tr>");
-				  out.println("<td>");
-				  out.println(obj);
-				  out.println("</td>");
-				  out.println("</tr>");				  
+				  //out.println("<tr>");
+				  //out.println("<td>");
+				  //out.println(obj);
+				  //out.println("</td>");
+				  //out.println("</tr>");				  
 				  outputArray.put(obj);
 				  
 				  //out.println("OutputArray size: " + outputArray.length());
@@ -155,7 +158,7 @@ public class StravaServlet extends HttpServlet {
 				  
 				  out.flush();
 				}
-				out.println("</table></body></html>");
+				//out.println("</table></body></html>");
 				
 				System.out.println("******************** End of the loop here **********************");
 				System.out.println("==============================================================================");

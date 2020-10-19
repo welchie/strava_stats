@@ -5,7 +5,7 @@
 
     <servlet>
         <servlet-name>stravaServlet</servlet-name>
-        <servlet-class>org.weewelchie.strava.stats.StravaServlet</servlet-class>
+        <servlet-class>org.weewelchie.strava.stats.StravaStatsServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
