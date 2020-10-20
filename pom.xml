@@ -10,6 +10,9 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.tomcat.url>http://localhost:8888/manager/text</maven.tomcat.url>
+		<tomcat.user>deploywar</tomcat.user>
+		<tomcat.password>iUsed2Think%%9153</tomcat.password>
 	</properties>
 
 
@@ -54,6 +57,11 @@
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.2</version>
+				<configuration>
+					<url>${maven.tomcat.url}</url>
+					<username>${tomcat.user}</username>
+					<password>${tomcat.password}</password>
+				</configuration>
 			</plugin>
    		</plugins>
    	</build>
