@@ -1,4 +1,4 @@
-package org.weewelchie.strava.stats;
+package org.weewelchie.strava.stats.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -30,6 +30,7 @@ import org.apache.oltu.oauth2.common.message.types.GrantType;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.weewelchie.strava.stats.beans.StravaData;
 
 import com.google.gson.Gson;
 

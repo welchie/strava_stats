@@ -2,7 +2,7 @@ package org.weewelchie.strava.stats.test;
 
 import java.util.Optional;
 
-import org.weewelchie.strava.stats.StravaData;
+import org.weewelchie.strava.stats.beans.StravaData;
 
 public class StatsService {
 	    public Optional<StravaData> getActivity(int id) {

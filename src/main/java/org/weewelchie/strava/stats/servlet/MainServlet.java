@@ -1,4 +1,4 @@
-package org.weewelchie.strava.stats;
+package org.weewelchie.strava.stats.servlet;
 
 import java.io.IOException;
 

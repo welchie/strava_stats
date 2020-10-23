@@ -1,4 +1,4 @@
-package org.weewelchie.strava.stats;
+package org.weewelchie.strava.stats.beans;
 
 import java.io.Serializable;
 
