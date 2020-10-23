@@ -2,15 +2,6 @@
 <web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_5.xsd">
-
-    <servlet>
-        <servlet-name>stravaServlet</servlet-name>
-        <servlet-class>org.weewelchie.strava.stats.StravaStatsServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>stravaServlet</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>
+    
 
 </web-app>

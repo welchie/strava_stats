@@ -1,4 +1,4 @@
-package org.weewelchie.strava.stats;
+package org.weewelchie.strava.stats.test;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
