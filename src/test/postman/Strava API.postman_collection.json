@@ -1,0 +1,289 @@
+{
+	"info": {
+		"_postman_id": "34bb8a8f-bc45-41e0-9710-e8eefd555bab",
+		"name": "Strava API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3254777",
+		"_collection_link": "https://cloudy-capsule-752318.postman.co/workspace/b65527c5-7866-40af-8299-a5ac79a47731/collection/3254777-34bb8a8f-bc45-41e0-9710-e8eefd555bab?action=share&creator=3254777&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Strava User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.strava.com/api/v3/athlete?access_token={{ACCESS_TOKEN}}",
+					"protocol": "https",
+					"host": [
+						"www",
+						"strava",
+						"com"
+					],
+					"path": [
+						"api",
+						"v3",
+						"athlete"
+					],
+					"query": [
+						{
+							"key": "Authorization",
+							"value": "'Bearer {{ACCESS_TOKEN}}'",
+							"disabled": true
+						},
+						{
+							"key": "access_token",
+							"value": "{{ACCESS_TOKEN}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authorise Client",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://www.strava.com/oauth/authorize?client_id={{CLIENTID}}&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=read",
+					"protocol": "http",
+					"host": [
+						"www",
+						"strava",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"authorize"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "{{CLIENTID}}"
+						},
+						{
+							"key": "response_type",
+							"value": "code"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost/exchange_token"
+						},
+						{
+							"key": "approval_prompt",
+							"value": "force"
+						},
+						{
+							"key": "scope",
+							"value": "read"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://www.strava.com/oauth/token?client_id={{CLIENTID}}&client_secret={{CLIENT_SECRET}}&code={{AUTH_TOKEN}}&grant_type=authorization_code",
+					"protocol": "https",
+					"host": [
+						"www",
+						"strava",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "{{CLIENTID}}"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{CLIENT_SECRET}}"
+						},
+						{
+							"key": "code",
+							"value": "{{AUTH_TOKEN}}"
+						},
+						{
+							"key": "grant_type",
+							"value": "authorization_code"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Athlete Stats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.strava.com/api/v3/athletes/{{ATHLETE_ID}}/stats?access_token={{ACCESS_TOKEN}}",
+					"protocol": "https",
+					"host": [
+						"www",
+						"strava",
+						"com"
+					],
+					"path": [
+						"api",
+						"v3",
+						"athletes",
+						"{{ATHLETE_ID}}",
+						"stats"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{ACCESS_TOKEN}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Athlete by Access Token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.strava.com/api/v3/athlete?access_token={{ACCESS_TOKEN}}",
+					"protocol": "https",
+					"host": [
+						"www",
+						"strava",
+						"com"
+					],
+					"path": [
+						"api",
+						"v3",
+						"athlete"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{ACCESS_TOKEN}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Athlete Activities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.strava.com/api/v3/athlete/activities?per_page=30&access_token={{ACCESS_TOKEN_PRIVATE}}",
+					"protocol": "https",
+					"host": [
+						"www",
+						"strava",
+						"com"
+					],
+					"path": [
+						"api",
+						"v3",
+						"athlete",
+						"activities"
+					],
+					"query": [
+						{
+							"key": "per_page",
+							"value": "30"
+						},
+						{
+							"key": "access_token",
+							"value": "{{ACCESS_TOKEN_PRIVATE}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate Access Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "client_id",
+							"value": "YOURCLIENTID",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "YOURCLIENTSECRET",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "b55003496d87a9f0b694ca1680cd5690d27d9d28",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://www.strava.com/oauth/token?client_Id={{CLIENTID}}&client_secret={{CLIENT_SECRET}}&code={{AUTH_TOKEN}}&grant_type=authorization_code",
+					"protocol": "https",
+					"host": [
+						"www",
+						"strava",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "client_Id",
+							"value": "{{CLIENTID}}"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{CLIENT_SECRET}}"
+						},
+						{
+							"key": "code",
+							"value": "{{AUTH_TOKEN}}"
+						},
+						{
+							"key": "grant_type",
+							"value": "authorization_code"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Detailed Activity",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

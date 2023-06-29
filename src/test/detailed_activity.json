@@ -1,0 +1,542 @@
+{
+  "resource_state": 3,
+  "athlete": {
+    "id": 13986969,
+    "resource_state": 1
+  },
+  "name": "Lunch Run",
+  "distance": 3717.1,
+  "moving_time": 1176,
+  "elapsed_time": 1176,
+  "total_elevation_gain": 56.5,
+  "type": "Run",
+  "sport_type": "Run",
+  "workout_type": 0,
+  "id": 9356011237,
+  "start_date": "2023-06-29T11:07:54Z",
+  "start_date_local": "2023-06-29T12:07:54Z",
+  "timezone": "(GMT+00:00) Europe/London",
+  "utc_offset": 3600.0,
+  "location_city": null,
+  "location_state": null,
+  "location_country": "United Kingdom",
+  "achievement_count": 0,
+  "kudos_count": 1,
+  "comment_count": 0,
+  "athlete_count": 1,
+  "photo_count": 0,
+  "map": {
+    "id": "a9356011237",
+    "polyline": "{n_uI~fqSUe@iAaBa@g@q@o@Y_@MSSk@AgANo@@MAMUk@[e@QiAEgAWaCUu@_@i@c@]e@Ya@a@c@Mg@DoAK_@c@Sw@o@mBk@wBS}BC}@JgCAiACgAUeDg@ZcA`A{D`DiBdB]n@U|@G|@BbARlCPlE@~@HdAPt@^bCv@`Db@\\f@GxCwDv@uAd@G`@Wb@]~@sAZ{@HKd@Kd@QhA[d@CV@hATb@TfBhBhDxDn@z@Zl@Xl@fBjFn@pBt@hB^l@`@h@`@\\`@TlA^d@Gd@Hf@Tf@HrBXd@?b@Ub@e@\\k@Vq@j@sBXs@\\o@\\c@JIf@Ob@?BBBPENe@Hg@P_@Z_@h@s@fBSx@[p@Wv@c@n@c@Vc@JyBUc@Ee@?a@p@Qr@c@He@^c@Rc@Si@o@e@Gg@McA{@c@MgAw@{@{@",
+    "resource_state": 3,
+    "summary_polyline": "uz_uIdjpSc@]e@Ya@a@c@Mg@DoAK_@c@Sw@o@mBW}@Sy@K_AG}@C}@JgCEqCUeDg@ZcA`A{D`DiBdB]n@U|@G|@BbARlCPlE@~@HdAPt@^bCv@`Db@\\f@GxCwDv@uAd@G`@Wb@]~@sAZ{@HKd@Kd@QhA[d@CV@hATb@TfBhBhDxDn@z@Zl@Xl@fBjFn@pBt@hB^l@`@h@`@\\`@TlA^d@Gd@Hf@Tf@HrBXd@?b@Ub@e@\\k@Vq@j@sBXs@\\o@\\c@JIf@Ob@?BBBPENe@Hg@P_@Z_@h@s@fBSx@[p@Wv@c@n@c@Vc@JyBUc@Ee@?a@p@Qr@c@He@^c@Rc@Si@o@e@Gg@McA{@c@M"
+  },
+  "trainer": false,
+  "commute": false,
+  "manual": false,
+  "private": false,
+  "visibility": "everyone",
+  "flagged": false,
+  "gear_id": "g13256722",
+  "start_latlng": [
+    56.035828879103065,
+    -3.370234267786145
+  ],
+  "end_latlng": [
+    56.03573986329138,
+    -3.370239967480302
+  ],
+  "average_speed": 3.161,
+  "max_speed": 4.307,
+  "average_cadence": 94.3,
+  "has_heartrate": true,
+  "average_heartrate": 132.1,
+  "max_heartrate": 145.0,
+  "heartrate_opt_out": false,
+  "display_hide_heartrate_option": true,
+  "elev_high": 53.2,
+  "elev_low": 13.8,
+  "upload_id": 10035444188,
+  "upload_id_str": "10035444188",
+  "external_id": "garmin_ping_281977071995",
+  "from_accepted_tag": false,
+  "pr_count": 0,
+  "total_photo_count": 0,
+  "has_kudoed": false,
+  "suffer_score": 6.0,
+  "description": "Recovery run.\n11 humans, 3 dogs, 0 bikes",
+  "calories": 218.0,
+  "perceived_exertion": null,
+  "prefer_perceived_exertion": false,
+  "segment_efforts": [
+    {
+      "id": 3109469131831003800,
+      "resource_state": 2,
+      "name": "BP climb",
+      "activity": {
+        "id": 9356011237,
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 13986969,
+        "resource_state": 1
+      },
+      "elapsed_time": 87,
+      "moving_time": 87,
+      "start_date": "2023-06-29T11:15:57Z",
+      "start_date_local": "2023-06-29T12:15:57Z",
+      "distance": 267.1,
+      "start_index": 96,
+      "end_index": 111,
+      "average_cadence": 95.4,
+      "device_watts": false,
+      "average_heartrate": 136.3,
+      "max_heartrate": 144.0,
+      "segment": {
+        "id": 19906112,
+        "resource_state": 2,
+        "name": "BP climb",
+        "activity_type": "Run",
+        "distance": 267.1,
+        "average_grade": 2.8,
+        "maximum_grade": 5.9,
+        "elevation_high": 44.2,
+        "elevation_low": 36.6,
+        "start_latlng": [
+          56.040936,
+          -3.367729
+        ],
+        "end_latlng": [
+          56.038903,
+          -3.365595
+        ],
+        "elevation_profile": null,
+        "climb_category": 0,
+        "city": "Dalgety Bay",
+        "state": "Scotland",
+        "country": "United Kingdom",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3109469131829782168,
+      "resource_state": 2,
+      "name": "Doon Harbour",
+      "activity": {
+        "id": 9356011237,
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 13986969,
+        "resource_state": 1
+      },
+      "elapsed_time": 330,
+      "moving_time": 330,
+      "start_date": "2023-06-29T11:17:37Z",
+      "start_date_local": "2023-06-29T12:17:37Z",
+      "distance": 1126.7,
+      "start_index": 116,
+      "end_index": 170,
+      "average_cadence": 95.6,
+      "device_watts": false,
+      "average_heartrate": 134.2,
+      "max_heartrate": 140.0,
+      "segment": {
+        "id": 22628957,
+        "resource_state": 2,
+        "name": "Doon Harbour",
+        "activity_type": "Run",
+        "distance": 1126.7,
+        "average_grade": -2.3,
+        "maximum_grade": 7.2,
+        "elevation_high": 42.6,
+        "elevation_low": 16.4,
+        "start_latlng": [
+          56.038706,
+          -3.365233
+        ],
+        "end_latlng": [
+          56.030265,
+          -3.368585
+        ],
+        "elevation_profile": null,
+        "climb_category": 0,
+        "city": "Dunfermline",
+        "state": "Scotland",
+        "country": "United Kingdom",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [
+        {
+          "type_id": 7,
+          "type": "segment_effort_count_leader",
+          "rank": 1,
+          "effort_count": 31
+        }
+      ],
+      "kom_rank": null,
+      "hidden": false
+    }
+  ],
+  "splits_metric": [
+    {
+      "distance": 1011.1,
+      "elapsed_time": 326,
+      "elevation_difference": -14.6,
+      "moving_time": 326,
+      "split": 1,
+      "average_speed": 3.1,
+      "average_grade_adjusted_speed": 3.1,
+      "average_heartrate": 122.93865030674847,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1010.0,
+      "elapsed_time": 310,
+      "elevation_difference": 3.7,
+      "moving_time": 310,
+      "split": 2,
+      "average_speed": 3.26,
+      "average_grade_adjusted_speed": 3.33,
+      "average_heartrate": 132.8516129032258,
+      "pace_zone": 0
+    },
+    {
+      "distance": 999.9,
+      "elapsed_time": 298,
+      "elevation_difference": -26.0,
+      "moving_time": 298,
+      "split": 3,
+      "average_speed": 3.36,
+      "average_grade_adjusted_speed": 3.24,
+      "average_heartrate": 133.83221476510067,
+      "pace_zone": 0
+    },
+    {
+      "distance": 697.1,
+      "elapsed_time": 242,
+      "elevation_difference": 36.6,
+      "moving_time": 242,
+      "split": 4,
+      "average_speed": 2.88,
+      "average_grade_adjusted_speed": 3.45,
+      "average_heartrate": 141.18595041322314,
+      "pace_zone": 0
+    }
+  ],
+  "splits_standard": [
+    {
+      "distance": 1609.8,
+      "elapsed_time": 506,
+      "elevation_difference": -13.3,
+      "moving_time": 506,
+      "split": 1,
+      "average_speed": 3.18,
+      "average_grade_adjusted_speed": 3.19,
+      "average_heartrate": 125.5494071146245,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1609.9,
+      "elapsed_time": 497,
+      "elevation_difference": -10.1,
+      "moving_time": 497,
+      "split": 2,
+      "average_speed": 3.24,
+      "average_grade_adjusted_speed": 3.31,
+      "average_heartrate": 135.01006036217305,
+      "pace_zone": 0
+    },
+    {
+      "distance": 498.4,
+      "elapsed_time": 173,
+      "elevation_difference": 23.1,
+      "moving_time": 173,
+      "split": 3,
+      "average_speed": 2.88,
+      "average_grade_adjusted_speed": 3.37,
+      "average_heartrate": 142.67630057803467,
+      "pace_zone": 0
+    }
+  ],
+  "laps": [
+    {
+      "id": 31915649959,
+      "resource_state": 2,
+      "name": "Lap 1",
+      "activity": {
+        "id": 9356011237,
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 13986969,
+        "resource_state": 1
+      },
+      "elapsed_time": 506,
+      "moving_time": 506,
+      "start_date": "2023-06-29T11:07:54Z",
+      "start_date_local": "2023-06-29T12:07:54Z",
+      "distance": 1609.34,
+      "start_index": 0,
+      "end_index": 60,
+      "total_elevation_gain": 5.9,
+      "average_speed": 3.18,
+      "max_speed": 3.97,
+      "average_cadence": 92.5,
+      "device_watts": false,
+      "average_heartrate": 125.5,
+      "max_heartrate": 135.0,
+      "lap_index": 1,
+      "split": 1,
+      "pace_zone": 0
+    },
+    {
+      "id": 31915649965,
+      "resource_state": 2,
+      "name": "Lap 2",
+      "activity": {
+        "id": 9356011237,
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 13986969,
+        "resource_state": 1
+      },
+      "elapsed_time": 496,
+      "moving_time": 496,
+      "start_date": "2023-06-29T11:16:25Z",
+      "start_date_local": "2023-06-29T12:16:25Z",
+      "distance": 1609.34,
+      "start_index": 61,
+      "end_index": 144,
+      "total_elevation_gain": 24.4,
+      "average_speed": 3.24,
+      "max_speed": 4.307,
+      "average_cadence": 95.6,
+      "device_watts": false,
+      "average_heartrate": 135.0,
+      "max_heartrate": 144.0,
+      "lap_index": 2,
+      "split": 2,
+      "pace_zone": 0
+    },
+    {
+      "id": 31915649967,
+      "resource_state": 2,
+      "name": "Lap 3",
+      "activity": {
+        "id": 9356011237,
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 13986969,
+        "resource_state": 1
+      },
+      "elapsed_time": 172,
+      "moving_time": 172,
+      "start_date": "2023-06-29T11:24:45Z",
+      "start_date_local": "2023-06-29T12:24:45Z",
+      "distance": 499.41,
+      "start_index": 145,
+      "end_index": 165,
+      "total_elevation_gain": 19.0,
+      "average_speed": 2.9,
+      "max_speed": 4.057,
+      "average_cadence": 95.9,
+      "device_watts": false,
+      "average_heartrate": 142.6,
+      "max_heartrate": 145.0,
+      "lap_index": 3,
+      "split": 3,
+      "pace_zone": 0
+    }
+  ],
+  "best_efforts": [
+    {
+      "id": 27157711072,
+      "resource_state": 2,
+      "name": "400m",
+      "activity": {
+        "id": 9356011237,
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 13986969,
+        "resource_state": 1
+      },
+      "elapsed_time": 109,
+      "moving_time": 110,
+      "start_date": "2023-06-29T11:17:28Z",
+      "start_date_local": "2023-06-29T12:17:28Z",
+      "distance": 400,
+      "start_index": 113,
+      "end_index": 134,
+      "pr_rank": null,
+      "achievements": []
+    },
+    {
+      "id": 27157711081,
+      "resource_state": 2,
+      "name": "1/2 mile",
+      "activity": {
+        "id": 9356011237,
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 13986969,
+        "resource_state": 1
+      },
+      "elapsed_time": 237,
+      "moving_time": 238,
+      "start_date": "2023-06-29T11:18:18Z",
+      "start_date_local": "2023-06-29T12:18:18Z",
+      "distance": 805,
+      "start_index": 123,
+      "end_index": 161,
+      "pr_rank": null,
+      "achievements": []
+    },
+    {
+      "id": 27157711086,
+      "resource_state": 2,
+      "name": "1k",
+      "activity": {
+        "id": 9356011237,
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 13986969,
+        "resource_state": 1
+      },
+      "elapsed_time": 292,
+      "moving_time": 294,
+      "start_date": "2023-06-29T11:18:06Z",
+      "start_date_local": "2023-06-29T12:18:06Z",
+      "distance": 1000,
+      "start_index": 121,
+      "end_index": 169,
+      "pr_rank": null,
+      "achievements": []
+    },
+    {
+      "id": 27157711090,
+      "resource_state": 2,
+      "name": "1 mile",
+      "activity": {
+        "id": 9356011237,
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 13986969,
+        "resource_state": 1
+      },
+      "elapsed_time": 483,
+      "moving_time": 484,
+      "start_date": "2023-06-29T11:10:59Z",
+      "start_date_local": "2023-06-29T12:10:59Z",
+      "distance": 1609,
+      "start_index": 48,
+      "end_index": 131,
+      "pr_rank": null,
+      "achievements": []
+    },
+    {
+      "id": 27157711100,
+      "resource_state": 2,
+      "name": "2 mile",
+      "activity": {
+        "id": 9356011237,
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 13986969,
+        "resource_state": 1
+      },
+      "elapsed_time": 1001,
+      "moving_time": 1003,
+      "start_date": "2023-06-29T11:08:02Z",
+      "start_date_local": "2023-06-29T12:08:02Z",
+      "distance": 3219,
+      "start_index": 7,
+      "end_index": 186,
+      "pr_rank": null,
+      "achievements": []
+    }
+  ],
+  "gear": {
+    "id": "g13256722",
+    "primary": false,
+    "name": "Nike Pegasus 39",
+    "nickname": null,
+    "resource_state": 2,
+    "retired": false,
+    "distance": 114898,
+    "converted_distance": 71.4
+  },
+  "photos": {
+    "primary": null,
+    "count": 0
+  },
+  "stats_visibility": [
+    {
+      "type": "heart_rate",
+      "visibility": "everyone"
+    },
+    {
+      "type": "pace",
+      "visibility": "everyone"
+    },
+    {
+      "type": "power",
+      "visibility": "everyone"
+    },
+    {
+      "type": "speed",
+      "visibility": "everyone"
+    },
+    {
+      "type": "calories",
+      "visibility": "everyone"
+    }
+  ],
+  "hide_from_home": false,
+  "device_name": "Garmin Forerunner 235",
+  "embed_token": "f31f5102780f714bd09ef44bb4669f4e2e8b30c5",
+  "similar_activities": {
+    "effort_count": 22,
+    "average_speed": 2.853852355063542,
+    "min_average_speed": 2.7092444573092442,
+    "mid_average_speed": 2.9474303159472415,
+    "max_average_speed": 3.231533744719454,
+    "pr_rank": 2,
+    "frequency_milestone": null,
+    "trend": {
+      "speeds": [
+        2.91739839216824,
+        2.950063725498049,
+        3.030101350574902,
+        3.0902088881841774,
+        3.114433333665123
+      ],
+      "current_activity_index": 4,
+      "min_speed": 2.7092444573092442,
+      "mid_speed": 2.9474303159472415,
+      "max_speed": 3.231533744719454,
+      "direction": 1
+    },
+    "resource_state": 2
+  },
+  "available_zones": [
+    "heartrate",
+    "pace"
+  ]
+}
