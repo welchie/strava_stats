@@ -7,6 +7,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.weewelchie.strava.stats.beans.StravaAthlete;
+import org.weewelchie.strava.stats.beans.StravaDetailedActivity;
 import org.weewelchie.strava.stats.beans.StravaStats;
 import org.weewelchie.strava.stats.beans.StravaTotals;
 
@@ -34,10 +35,10 @@ public class StravaHttpClient {
     private final String GET_ATHLETE_ACTIVITIES;
     private final String GET_DETAILED_ACTIVITY;
 
-    private final String ACCESS_TOKEN = "b392573ccaefce2b85d5ddbd934308f5c0076444";
-    private final String ACCESS_TOKEN_PRIVATE = "1186e6bfcdcdcf0e57dd5f9b294adc432d1b0d32";
+    private final String ACCESS_TOKEN = "0475637df149b204ebd729f34215db155f996561";
+    private final String ACCESS_TOKEN_PRIVATE = "b5102bb00581833a47fd549efe1390f569f46a73";
 
-    private final String ACCESS_TOKEN_DETAIL = "8c6d740766ed500b309319f4d28eb216f6229e5d";
+    private final String ACCESS_TOKEN_DETAIL = "978a52a78c680e268f29e4c7061503ebf821735c";
 
     private final Integer NUM_ACTIVITIES = 50;
 
@@ -71,11 +72,10 @@ public class StravaHttpClient {
         }
 
         System.out.println("Ids: " + ids);
-        JSONArray details= strava.getDetailedAthleteActivities(ids);
-        for(int i =0;i< details.length();i++)
+        List<StravaDetailedActivity> details= strava.getDetailedAthleteActivities(ids);
+        for(StravaDetailedActivity sd:details)
         {
-            JSONObject obj = (JSONObject) details.get(i);
-            System.out.println("Activity: \nName: " + obj.get("name") + " \nDistance: " + obj.get("distance") + " \nDescription: " + obj.get("description"));
+            System.out.println(sd);
         }
     }
 
@@ -174,10 +174,10 @@ public class StravaHttpClient {
     }
 
 
-    public JSONArray getDetailedAthleteActivities(List<String> ids) throws IOException, InterruptedException {
+    public List<StravaDetailedActivity> getDetailedAthleteActivities(List<String> ids) throws IOException, InterruptedException {
         //{{ACTIVITY_ID}}?include_all_efforts=true&access_token={{ACCESS_TOKEN_PRIVATE}}
 
-        JSONArray activities = new JSONArray();
+        List<StravaDetailedActivity> activities = new ArrayList<StravaDetailedActivity>();
         URI uri;
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request;
@@ -203,7 +203,14 @@ public class StravaHttpClient {
             }
             else
             {
-                activities.put(new JSONObject(response.body()));
+                JSONObject json = new JSONObject(response.body());
+                byte[] jsonData = json.toString().getBytes();
+
+                ObjectMapper mapper = new ObjectMapper();
+                mapper.configure(
+                        DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+                StravaDetailedActivity stravaDetailedActivity = mapper.readValue(jsonData, StravaDetailedActivity.class);
+                activities.add(stravaDetailedActivity);
             }
 
         }
