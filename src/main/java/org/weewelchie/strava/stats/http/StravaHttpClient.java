@@ -4,8 +4,11 @@ import org.apache.hc.core5.http.HttpStatus;
 import org.codehaus.jackson.map.DeserializationConfig;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
-import org.weewelchie.strava.stats.beans.Athlete;
+import org.weewelchie.strava.stats.beans.StravaAthlete;
+import org.weewelchie.strava.stats.beans.StravaStats;
+import org.weewelchie.strava.stats.beans.StravaTotals;
 
 import java.io.IOException;
 import java.net.URI;
@@ -31,10 +34,10 @@ public class StravaHttpClient {
     private final String GET_ATHLETE_ACTIVITIES;
     private final String GET_DETAILED_ACTIVITY;
 
-    private final String ACCESS_TOKEN = "d3222b7e8841c1dc085456663ac5bd100acdf763";
-    private final String ACCESS_TOKEN_PRIVATE = "b0a2e78a8afbca60cc94b58800a6f71ceebf4fb9";
+    private final String ACCESS_TOKEN = "b392573ccaefce2b85d5ddbd934308f5c0076444";
+    private final String ACCESS_TOKEN_PRIVATE = "1186e6bfcdcdcf0e57dd5f9b294adc432d1b0d32";
 
-    private final String ACCESS_TOKEN_DETAIL = "a1b222e6db763e2572f08b1699b6e16930dfd3dc";
+    private final String ACCESS_TOKEN_DETAIL = "8c6d740766ed500b309319f4d28eb216f6229e5d";
 
     private final Integer NUM_ACTIVITIES = 50;
 
@@ -48,11 +51,11 @@ public class StravaHttpClient {
     public static void main(String[] args) throws Exception {
 
         StravaHttpClient strava = new StravaHttpClient();
-        Athlete athlete = strava.getAthleteByAccessToken();
-        Integer athleteID = athlete.getId();
-        System.out.println("Athlete details: " + athlete);
+        StravaAthlete stravaAthlete = strava.getAthleteByAccessToken();
+        Integer athleteID = stravaAthlete.getId();
+        System.out.println("Athlete details: " + stravaAthlete);
 
-        JSONObject athleteStats = strava.getAthleteStats(athleteID);
+        StravaStats athleteStats = strava.getAthleteStats(athleteID);
         System.out.println("Athlete Stats: " + athleteStats);
 
         JSONArray athleteActivities = strava.getAthleteActivities();
@@ -76,7 +79,7 @@ public class StravaHttpClient {
         }
     }
 
-    public Athlete getAthleteByAccessToken() throws URISyntaxException, IOException, InterruptedException {
+    public StravaAthlete getAthleteByAccessToken() throws URISyntaxException, IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .version(HttpClient.Version.HTTP_2)
@@ -94,8 +97,13 @@ public class StravaHttpClient {
             ObjectMapper mapper = new ObjectMapper();
             mapper.configure(
                     DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-            Athlete athlete = mapper.readValue(jsonData, Athlete.class);
-            return athlete;
+            StravaAthlete stravaAthlete = mapper.readValue(jsonData, StravaAthlete.class);
+            stravaAthlete.setProfileMedium(json.getString("profile_medium"));
+            stravaAthlete.setResourceState(json.getInt("resource_state"));
+            stravaAthlete.setCreatedAt(json.getString("created_at"));
+            stravaAthlete.setUpdatedAt(json.getString("updated_at"));
+            stravaAthlete.setBadgeTypeId(json.getInt("badge_type_id"));
+            return stravaAthlete;
         }
         else {
             System.err.println("Error: " + response.body());
@@ -103,7 +111,7 @@ public class StravaHttpClient {
         }
     }
 
-    public JSONObject getAthleteStats(Integer id) throws IOException, InterruptedException {
+    public StravaStats getAthleteStats(Integer id) throws IOException, InterruptedException {
         //{{ATHLETE_ID}}/stats?access_token={{ACCESS_TOKEN}}
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
@@ -114,9 +122,28 @@ public class StravaHttpClient {
                 .build();
         HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
 
-        if (response.statusCode() == HttpStatus.SC_OK)
-            return new JSONObject(response.body());
-        else{
+
+        if (response.statusCode() == HttpStatus.SC_OK) {
+            //Convert to StravaAthlete Object
+            JSONObject json = new JSONObject(response.body());
+            //Find each sub JSON Object for StravaTotals
+            StravaStats stats = new StravaStats();
+            stats.setRecentRunTotals(getTotalsFromJson((JSONObject)json.get("recent_run_totals")));
+            stats.setAllRunTotals(getTotalsFromJson((JSONObject)json.get("all_run_totals")));
+            stats.setRecentSwimTotals(getTotalsFromJson((JSONObject)json.get("recent_swim_totals")));
+            stats.setAllSwimTotals(getTotalsFromJson((JSONObject)json.get("all_swim_totals")));
+            stats.setYtdSwimTotals(getTotalsFromJson((JSONObject)json.get("ytd_swim_totals")));
+            stats.setRecentRideTotals(getTotalsFromJson((JSONObject)json.get("recent_ride_totals")));
+            stats.setAllRideTotals(getTotalsFromJson((JSONObject)json.get("all_ride_totals")));
+            stats.setYtdRideTotals(getTotalsFromJson((JSONObject)json.get("ytd_ride_totals")));
+            stats.setYtdRunTotals(getTotalsFromJson((JSONObject)json.get("ytd_run_totals")));
+
+            stats.setBiggestRideDistance(json.getDouble("biggest_ride_distance"));
+            stats.setBiggestClimbElevationGain(json.getDouble("biggest_climb_elevation_gain"));
+
+            return stats;
+        }
+        else {
             System.err.println("Error: " + response.body());
             return null;
         }
@@ -182,6 +209,30 @@ public class StravaHttpClient {
         }
 
         return activities;
+    }
+
+    public StravaTotals getTotalsFromJson(JSONObject totals) throws IOException {
+       StravaTotals stravaTotals = new StravaTotals();
+        stravaTotals.setDistance(totals.getDouble("distance"));
+        try {
+            stravaTotals.setAchievementCount(totals.getInt("achievement_count"));
+        }
+        catch (JSONException e)
+        {
+            //Achievement_count not relevant just set it to 0
+            if (e.getMessage().toLowerCase().contains("not found"))
+            {
+                stravaTotals.setAchievementCount(0);
+            }
+        }
+        stravaTotals.setCount(totals.getInt("count"));
+        stravaTotals.setElapsedTime(totals.getInt("elapsed_time"));
+        stravaTotals.setElevationGain(totals.getDouble("elevation_gain"));
+        stravaTotals.setMovingTime(totals.getInt("moving_time"));
+
+
+
+        return stravaTotals;
     }
 
 

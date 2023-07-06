@@ -32,7 +32,7 @@ import java.util.Objects;
         "username"
 })
 
-public class Athlete implements Serializable {
+public class StravaAthlete implements Serializable {
 
     @JsonProperty("country")
     private String country;
@@ -291,7 +291,7 @@ public class Athlete implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Athlete that = (Athlete) o;
+        StravaAthlete that = (StravaAthlete) o;
         return Objects.equals(country, that.country) && Objects.equals(profileMedium, that.profileMedium) && Objects.equals(firstname, that.firstname) && Objects.equals(follower, that.follower) && Objects.equals(city, that.city) && Objects.equals(resourceState, that.resourceState) && Objects.equals(sex, that.sex) && Objects.equals(profile, that.profile) && Objects.equals(bio, that.bio) && Objects.equals(createdAt, that.createdAt) && Objects.equals(weight, that.weight) && Objects.equals(summit, that.summit) && Objects.equals(lastname, that.lastname) && Objects.equals(premium, that.premium) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(badgeTypeId, that.badgeTypeId) && Objects.equals(friend, that.friend) && Objects.equals(id, that.id) && Objects.equals(state, that.state) && Objects.equals(username, that.username) && Objects.equals(additionalProperties, that.additionalProperties);
     }
 
